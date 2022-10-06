@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" href="images/computer.png">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h4 class="heading-4">Quản lý kho hàng</h4>
+            <button class="btn btn-primary" onclick="openModal()">
+                <i class="fa-solid fa-person-circle-plus"></i>
+                Add Item
+            </button>
+        </div>
+        <div class="row">
+            <table class="table" border="1">
+                <thead>
+                    <tr>
+                        <th>
+                            Mã sản phẩm
+                            <span class="sort" title="ascending" onclick="ascending('nameId')">&#9650;</span>
+                            <span class="sort" title="descending" onclick="descending('nameId')">&#9660;</span>
+                        </th>
+
+                        <th>Avatar</th>
+                        <th>Tên sản phẩm
+                            <span class="sort" title="ascending" onclick="ascending('nameSp')">&#9650;</span>
+                            <span class="sort" title="descending" onclick="descending('nameSp')">&#9660;</span>
+                        </th>
+                        <th>Giá(VND)
+                            <span class="sort" title="ascending" onclick="ascending('amount')">&#9650;</span>
+                            <span class="sort" title="descending" onclick="descending('amount')">&#9660;</span>
+                        </th>
+                        <th>Số lượng
+                            <span class="sort" title="ascending" onclick="ascending('amount')">&#9650;</span>
+                            <span class="sort" title="descending" onclick="descending('amount')">&#9660;</span>
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="paging-area">
+                <ul id="pagination">
+                </ul>
+    </div>
+    <div class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Add contact</div>
+                <div class="close-modal" onclick="closeModal()">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="create-contact">
+                    <div class="contact-info">
+                        <div class="form-group">
+                            <label for="name">Mã sản phẩm</label>
+                            <input type="text" class="form-control" id="nameId">
+                            <input type="hidden" value="0" id="contactId">
+                        </div>
+                        <div class="form-group">
+                            <label for="avatar">Hình ảnh</label>
+                            <input type="url" class="form-control" id="avatar" onchange="changeAvatar()">
+                        </div>
+                        <div class="form-group">
+                            <label for="nameSp">Tên sản phẩm</label>
+                            <input type="text" class="form-control" id="nameSp">
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Giá tiền</label>
+                            <input type="number" class="form-control" id="amount">
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Số lượng</label>
+                            <input type="number" class="form-control" id="number1">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <button id="btnAdd" class="btn btn-warning mr" onclick="addContact()">Add</button>
+                            <button id="btnUpdate" class="btn btn-primary mr d-none" onclick="updateContact()">Save</button>
+                            <button class="btn btn-danger" onclick="closeModal()">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="preview-avatar">
+                        <img class="avatar-lg" src="images/noavatar.jpg" alt="">
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <script src="contact.js"></script>
+</body>
+</html>
